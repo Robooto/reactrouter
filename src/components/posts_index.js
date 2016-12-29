@@ -6,6 +6,9 @@ import { fetchPosts } from '../actions/index';
 import { Link } from 'react-router';
 
 
+import Modal from './modal';
+
+
 class PostsIndex extends Component {
     //lifecycle method - react will call when componet is rendered first time
     componentWillMount() {
@@ -30,6 +33,9 @@ class PostsIndex extends Component {
                     <Link to="/posts/new" className="btn btn-primary">
                         Add a Post
                     </Link>
+                    <Modal>
+                        <h1>Modal information!</h1>
+                    </Modal>
                 </div>
                 <h3></h3>
                 <ul className="list-group">
