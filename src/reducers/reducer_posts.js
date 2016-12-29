@@ -9,7 +9,7 @@ export default function (state = INITIAL_STATE, action) {
 
         case FETCH_POSTS:
             // take current state and add all
-            return { ...state, all: action.payload.data };
+            return { ...state, all: action.payload };
         default:
             return state;
     }

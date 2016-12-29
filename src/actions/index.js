@@ -13,9 +13,16 @@ const API_KEY = '?key=pizzaboy234ik';
 export function fetchPosts() {
     const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
 
-    return {
-        type: FETCH_POSTS,
-        payload: request
+    // return {
+    //     type: FETCH_POSTS,
+    //     payload: request
+    // };
+
+    // will send off to all of our reducers
+    return (dispatch) => {
+        request.then(({data}) => {
+            dispatch({ type: FETCH_POSTS, payload: data});
+        });
     };
 }
 
